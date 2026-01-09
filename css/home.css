@@ -6,7 +6,7 @@
 body{
     margin: 0;
     padding: 0;
-    background-color:#ffffff;
+    background-color : white;
 }
 .navbar{
     display: flex;
@@ -186,8 +186,10 @@ body{
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 20px 20px;
+    padding: 30px 40px;
     gap: 20px;
+    background-color: pink;
+   
 }
 .image{
     height: 500px;
@@ -217,18 +219,22 @@ body{
 }
 .course-section {
     margin: auto;
-   max-width: 1200px;
+   max-width: 1250px;
+      background-color: pink;
+      padding-top: 40px;
+      padding-left: 30px;
   
 }
 .course-title {
     font-size: 20px;
     margin-bottom: 10px;
+   
 }
 
 .card {
  background: #fff;
     width: 260px;
-    padding: 20px;
+    padding: 20px 20px;
     margin-top: 10px;
     border-radius: 12px;
     box-shadow: 0 4px 12px rgba(0,0,0,0.1);
