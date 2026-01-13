@@ -222,7 +222,41 @@
       font-size: 14px;
       color: #666;
     }
+     @media (max-width: 900px) {
+      .main-container {
+        flex-direction: column;
+        width: 90%;
+        height: auto;
+      }
 
+      .navbar {
+        display: none;
+        flex-direction: column;
+        background: #ffffff;
+        position: absolute;
+        top: 70px;
+        right: 30px;
+        padding: 15px;
+        border-radius: 15px;
+      }
+
+      .navbar.show {
+        display: flex;
+      }
+
+      .hamburger-icon {
+        display: block;
+      }
+
+      .footer-container {
+        flex-direction: column;
+        text-align: center;
+      }
+
+      .social-icons {
+        justify-content: center;
+      }
+    }
     </style>
 </head>
 <body>
