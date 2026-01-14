@@ -318,3 +318,13 @@ body{
         margin-bottom: 10px;
     }
 }
+.theme-container {
+    position: fixed;
+    width: fit-content;
+    border: 1px solid black;
+    border-radius: 50px;
+    cursor: pointer;
+    top:10px;
+    right:10px;
+    padding: 3px 5px;
+}
