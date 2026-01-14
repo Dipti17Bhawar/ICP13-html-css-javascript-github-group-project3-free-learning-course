@@ -310,19 +310,6 @@ body{
     padding:6px 15px;
     cursor: pointer;
 }
-@media (max-width: 480px) {
-    .image-section {
-        width: 250px;
-        height: 250px;
-    }
-
-    .image {
-        height: 200px;
-        margin-left: 10px;
-        margin-bottom: 10px;
-    }
-    
-}
 .theme-toggle{ 
    position: fixed;
     width: fit-content;
@@ -339,4 +326,16 @@ body{
 }
 .theme-toggle-dark{
     border: 1px solid #000;
+}
+@media (max-width: 500px) {
+    .image-section {
+        width: 250px;
+        height: 250px;
+    }
+
+    .image {
+        height: 200px;
+        margin-left: 10px;
+        margin-bottom: 10px;
+    }  
 }
