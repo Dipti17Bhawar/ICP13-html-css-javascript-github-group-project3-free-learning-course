@@ -1,11 +1,377 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+  <meta charset="UTF-8">
+  <title>Signup | SkillSprout</title>
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: "Segoe UI", sans-serif;
+    }
+
+    body {
+      min-height: 100vh;
+      background: linear-gradient(135deg, #ddb892, #ede0d4);
+    }
+
+   
+    .logo {
+      height: 45px;
+      margin-right: 15px;
+    }
+
+    .app-title {
+      font-family: "Times New Roman", Times, serif;
+      background: #ffffff;
+      border: 2px solid #d9d9d9;
+      box-shadow: 0 4px #bfbfbf;
+      border-radius: 50px;
+      margin: 20px 80px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 6px 20px;
+      position: sticky;
+      top: 20px;
+      z-index: 100;
+    }
+
+    .title {
+      font-size: 22px;
+      margin-right: auto;
+      margin-left: 10px;
+    }
+
+    .navbar {
+      display: flex;
+      align-items: center;
+      gap: 25px;
+    }
+
+    .nav-item {
+      color: black;
+      font-size: 17px;
+      text-decoration: none;
+    }
+
+    .btn {
+      padding: 6px 16px;
+      border-radius: 20px;
+      border: none;
+      background-color: #b08968;
+      color: white;
+      cursor: pointer;
+    }
+
+    .hamburger-icon {
+      height: 30px;
+      display: none;
+      cursor: pointer;
+    }
+
+ 
+    .main-container {
+      width: 800px;
+      height: 430px;
+      background: #fefae0;
+      margin: 40px auto;
+      display: flex;
+      border-radius: 16px;
+      overflow: hidden;
+      box-shadow: 0 15px 35px rgba(127, 85, 57, 0.25);
+    }
+
+    .left-panel {
+      width: 50%;
+      background: linear-gradient(135deg, #c9a27e, #b08968);
+      color: white;
+      padding: 45px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+
+    .right-panel {
+      width: 50%;
+      padding: 45px;
+      background: #fffdf7;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+
+    .right-panel h2 {
+      text-align: center;
+      margin-bottom: 20px;
+      color: #7f5539;
+    }
+
+    form {
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+    }
+
+    input {
+      width: 100%;
+      padding: 12px 42px 12px 12px;
+      border-radius: 8px;
+      border: 1px solid #ddb892;
+      background: #fefae0;
+      font-size: 14px;
+      outline: none;
+    }
+
+    .password-box {
+      position: relative;
+      width: 100%;
+    }
+
+    .password-box span {
+      position: absolute;
+      right: 12px;
+      top: 50%;
+      transform: translateY(-50%);
+      cursor: pointer;
+      font-size: 16px;
+    }
+
+    form button {
+      padding: 12px;
+      background: #b08968;
+      color: white;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      font-size: 15px;
+    }
+
+    form button:hover {
+      background: #9c6644;
+    }
+
+   
+    .footer {
+      background-color: #ffe4cc;
+      border-top: 2px solid #d9d9d9;
+      font-family: "Times New Roman", Times, serif;
+      padding: 40px 20px 20px;
+      margin-top: 60px;
+    }
+
+    .footer-container {
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      max-width: 1200px;
+      margin: auto;
+      gap: 40px;
+    }
+
+    .footer-section {
+      flex: 1;
+      min-width: 250px;
+    }
+
+    .footer-section h2,
+    .footer-section h3 {
+      margin-bottom: 15px;
+      font-size: 18px;
+      color: #222;
+    }
+
+    .footer-section p {
+      font-size: 14px;
+      line-height: 1.6;
+      color: #333;
+    }
+
+    .footer-section ul {
+      list-style: none;
+    }
+
+    .footer-section ul li {
+      margin-bottom: 10px;
+    }
+
+    .footer-section ul li a {
+      text-decoration: none;
+      color: #333;
+      transition: 0.3s;
+    }
+
+    .footer-section ul li a:hover {
+      color: #000;
+      padding-left: 5px;
+    }
+
+    .social-icons {
+      display: flex;
+      gap: 15px;
+      margin-top: 10px;
+    }
+
+    .social-logo {
+      height: 28px;
+      cursor: pointer;
+    }
+
+    .footer-bottom {
+      text-align: center;
+      border-top: 1px solid #d9d9d9;
+      margin-top: 20px;
+      padding-top: 10px;
+      font-size: 14px;
+      color: #666;
+    }
+
+   
+    @media (max-width: 900px) {
+      .main-container {
+        flex-direction: column;
+        width: 90%;
+        height: auto;
+      }
+
+      .navbar {
+        display: none;
+        flex-direction: column;
+        background: #ffffff;
+        position: absolute;
+        top: 70px;
+        right: 30px;
+        padding: 15px;
+        border-radius: 15px;
+      }
+
+      .navbar.show {
+        display: flex;
+      }
+
+      .hamburger-icon {
+        display: block;
+      }
+
+      .footer-container {
+        flex-direction: column;
+        text-align: center;
+      }
+
+      .social-icons {
+        justify-content: center;
+      }
+    }
+  </style>
 </head>
+
 <body>
-    
+
+  
+  <div class="app-title">
+    <img class="logo" src="../images/logo.png" />
+    <h2 class="title">SkillSprout</h2>
+
+    <div class="navbar">
+      <a class="nav-item" href="index.html">Home</a>
+      <a class="nav-item" href="courses.html">Courses</a>
+      <a class="nav-item" href="todo.html">To-Do</a>
+      <a class="nav-item" href="notes.html">Notes</a>
+      <a href="login.html"><button class="btn">Log in</button></a>
+    </div>
+
+    <img src="../images/hamburger.png" class="hamburger-icon" onclick="toggleMenu()" />
+  </div>
+
+
+  <div class="main-container">
+    <div class="left-panel">
+      <h1>Join SkillSprout 🌱</h1>
+      <p>Learn, grow and build your future.</p>
+    </div>
+
+    <div class="right-panel">
+      <h2>Create Account</h2>
+
+      <form>
+        <input type="text" placeholder="👤 Full Name" required>
+        <input type="email" placeholder="📧 Email Address" required>
+
+        <div class="password-box">
+          <input type="password" id="pass1" placeholder="🔒 Password" required>
+          <span onclick="togglePassword('pass1')">👁️</span>
+        </div>
+
+        <div class="password-box">
+          <input type="password" id="pass2" placeholder="🔐 Confirm Password" required>
+          <span onclick="togglePassword('pass2')">👁️</span>
+        </div>
+
+        <button type="submit">Create Account</button>
+      </form>
+    </div>
+  </div>
+
+ 
+  <footer class="footer">
+    <div class="footer-container">
+
+      <div class="footer-section">
+        <h2>SkillSprout</h2>
+        <p>
+          SkillSprout is your go-to platform for learning new skills online,
+          completely free. Explore courses, manage your to-dos, take notes,
+          and grow your knowledge every day.
+        </p>
+
+        <h3>Follow us</h3>
+        <div class="social-icons">
+         <a href="https://www.instagram.com"><img src ="../images/instagram.png" class="social-logo"></a>
+              <a href="https://www.facebook.com"><img src ="../images/facebook.png" class="social-logo"></a>
+                <a href="https://www.youtube.com"><img src ="../images/youtube.png" class="social-logo"></a>
+                 <a href="https://www.x.com"><img src ="../images/twitter.png" class="social-logo"></a>
+        </div>
+      </div>
+
+      <div class="footer-section">
+        <h3>Quick Links</h3>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="courses.html">Courses</a></li>
+          <li><a href="todo.html">To-Do</a></li>
+          <li><a href="notes.html">Notes</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-section">
+        <h3>Support</h3>
+        <ul>
+          <li><a href="#">Help Center</a></li>
+          <li><a href="#">Privacy Policy</a></li>
+          <li><a href="#">Terms & Conditions</a></li>
+          <li><a href="#">Contact Us</a></li>
+        </ul>
+      </div>
+
+    </div>
+
+    <div class="footer-bottom">
+      © 2026 SkillSprout. All Rights Reserved.
+    </div>
+  </footer>
+
+  <script>
+    function toggleMenu() {
+      document.querySelector(".navbar").classList.toggle("show");
+    }
+
+    function togglePassword(id) {
+      const input = document.getElementById(id);
+      input.type = input.type === "password" ? "text" : "password";
+    }
+  </script>
+
 </body>
 </html>
