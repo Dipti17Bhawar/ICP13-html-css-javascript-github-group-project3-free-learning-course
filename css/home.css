@@ -329,9 +329,9 @@ body{
     padding: 3px 5px;
     font-size: 12px;
 }
-.theme-toggle-ligth{
-    border: 1px solid black;
+.theme-toggle-light{
+    border: 1px solid #fff;
 }
 .theme-toggle-dark{
-    border: 1px solid #fff;
+    border: 1px solid #000;
 }
